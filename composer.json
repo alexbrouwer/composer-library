@@ -1,10 +1,16 @@
 {
     "name": "par/composer-library",
-    "description": "Template for a composer library",
+    "description": "Strongly typed enums",
     "type": "library",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Alex Brouwer",
+            "role": "lead"
+        }
+    ],
     "config": {
         "sort-packages": true,
         "platform": {
@@ -22,7 +28,8 @@
         }
     },
     "require": {
-        "php": "^7.2"
+        "php": "^7.2",
+        "par/core": "^1.0"
     },
     "require-dev": {
         "par/coding-standard": "^1.0",
@@ -30,5 +37,16 @@
         "phpstan/phpstan": "^0.11.8",
         "phpunit/phpunit": "^8.1",
         "roave/security-advisories": "dev-master"
+    },
+    "scripts": {
+        "analyse": "phpstan analyse --no-progress",
+        "check": [
+            "@cs-check",
+            "@test"
+        ],
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "test": "phpunit --colors=always",
+        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
     }
 }
