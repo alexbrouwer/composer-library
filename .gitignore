@@ -2,3 +2,5 @@
 /phpunit.xml
 /clover.xml
 /coveralls-upload.json
+/composer.lock
+/.phpunit.result.cache
