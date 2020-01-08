@@ -15,6 +15,7 @@ composer create-project par/composer-library name-of-library
 ```json
 {
     "name": "par/name-of-library",
+    "description": "description of library",
     "autoload": {
         "psr-4": {
              "PAR\\NamespaceOfLibrary\\": "src/"
