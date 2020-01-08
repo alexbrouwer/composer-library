@@ -1,10 +1,14 @@
 export MAKER_PATH ?= vendor/par/maker
--include $(MAKER_PATH)/Makefile
+ifneq ("$(wildcard $(MAKER_PATH)/Makefile)","")
+	-include $(MAKER_PATH)/Makefile
+else
+	DEFAULT_TARGET = build
+endif
 
 .PHONY: init build test clean
 
 ## Init project
-init:
+init: $(DEFAULT_TARGET)
 	@exit 0;
 
 ## Clean project
@@ -13,7 +17,6 @@ clean:
 
 ## Build project
 build: code/deps/install
-	@composer install --no-interaction
 
 ## Test project
 test: code/deps/validate code/check code/analyse
