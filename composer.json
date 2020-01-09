@@ -1,6 +1,6 @@
 {
     "name": "par/composer-library",
-    "description": "Strongly typed enums",
+    "description": "Template for a composer par library",
     "type": "library",
     "minimum-stability": "dev",
     "prefer-stable": true,
